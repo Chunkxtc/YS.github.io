@@ -1,0 +1,98 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+body {
+	background-image: url(image/BJ.jpg);
+	background-size: cover;
+    text-align: center;
+	
+}
+body::after {
+    content: "";
+    background: rgba(0,0,0,0.4);
+    position: absolute;  
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+	/* 将伪元素的堆叠顺序设置为负数，使其位于父元素的下方 */
+}
+li{
+	list-style-type: none;
+}
+a{
+	list-style-type: none;
+}
+.carousel{
+	width: 1000px;
+	height: 560px;
+	margin: 0 auto;
+	/* top: 50%; */
+	margin-top: 5%;
+	background-color: pink;
+	position: relative;/* 相对定位 */
+	overflow: hidden;/* 剪掉其内容超出边界的部分，它相对于position: relative定义的元素进行定位 */ 
+}
+
+/* 1.轮播图样式设置 */
+.carousel-imgs{
+	width: 10000px;
+}
+.carousel-imgs li{
+	float: left;
+}
+
+.carousel-imgs img {
+  width: 1000px;
+  height: 560px;
+}
+
+/* 2.控制器 */
+.prev, .next{
+	width: 32px;
+	height: 32px;
+	position: absolute;/* 绝对定位,脱离文档流 */
+	top: 50%;
+	margin-top: -16px;
+}
+
+.prev{
+	background-image: url(image/prev.png);
+	left: 10px;
+
+}
+.next{
+	background-image: url(image/next.png);
+	right: 10px;
+}
+
+/* 3.计数器 */
+.count{
+	width: 1000px;
+	height: 10px;
+	position: absolute;
+	bottom: 25px;	
+}
+.count ul{
+	width: 110px;
+	height: 10px;
+	margin: 0 auto;
+	/* background-color: pink; */
+}
+.count ul li{
+	width: 20px;
+	height: 20px;
+	cursor: pointer;/* 将鼠标形状设为手形 */
+	background-color: whitesmoke;
+	opacity: .5;/* 标签元素透明度,取值范围：[0-1]之间的一个数，可以是小数 */
+	float: left;
+	margin-right: 15px;
+	border-radius: 50%;/* 圆角 */
+}
+
+.count .active{
+	background-color: pink;
+	opacity: 1;
+}
